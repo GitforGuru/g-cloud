@@ -1,0 +1,191 @@
+[
+    {
+    "task": "Create a storage bucket in the asia region",
+    "command": " gcloud storage buckets create gs://my-gurubucket-asia --location=asia",
+    "terminal_output": "Creating gs://my-gurubucket-asia/...\nCreated bucket [my-gurubucket-asia]."
+
+    },
+    {
+    "task": "List all storage buckets",
+    "command": "gcloud storage buckets list",
+    "terminal_output": "acl:
+- entity: project-owners-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: owners
+  role: OWNER
+- entity: project-editors-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: editors
+  role: OWNER
+- entity: project-viewers-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: viewers
+  role: READER
+creation_time: 2025-02-20T01:55:29+0000
+default_acl:
+- entity: project-owners-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: owners
+  role: OWNER
+- entity: project-editors-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: editors
+  role: OWNER
+- entity: project-viewers-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: viewers
+  role: READER
+default_storage_class: STANDARD
+generation: 1740016529084229735
+location: ASIA-EAST1
+location_type: region
+metageneration: 1
+name: 351597940302-asia-east1-blueprint-config
+public_access_prevention: inherited
+soft_delete_policy:
+  effectiveTime: '2025-02-20T01:55:29.873000+00:00'
+  retentionDurationSeconds: '604800'
+storage_url: gs://351597940302-asia-east1-blueprint-config/
+uniform_bucket_level_access: false
+update_time: 2025-02-20T01:55:29+0000
+---
+acl:
+- entity: project-editors-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: editors
+  role: OWNER
+- entity: project-owners-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: owners
+  role: OWNER
+- entity: project-viewers-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: viewers
+  role: READER
+creation_time: 2025-02-20T01:56:12+0000
+default_acl:
+- entity: project-owners-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: owners
+  role: OWNER
+- entity: project-editors-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: editors
+  role: OWNER
+- entity: project-viewers-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: viewers
+  role: READER
+default_storage_class: REGIONAL
+generation: 1740016571444941169
+labels:
+  goog-ccm: 'true'
+  goog-solutions-console-deployment-name: dynamic-web-app
+  goog-solutions-console-solution-id: dynamic-web-app
+  goog-terraform-provisioned: 'true'
+location: ASIA-SOUTH1
+location_type: region
+metageneration: 3
+name: media-turnkey-setup-451305-r0-28cb
+public_access_prevention: inherited
+satisfies_pzs: true
+soft_delete_policy:
+  effectiveTime: '2025-02-20T01:56:12.450000+00:00'
+  retentionDurationSeconds: '604800'
+storage_url: gs://media-turnkey-setup-451305-r0-28cb/
+uniform_bucket_level_access: false
+update_time: 2025-02-20T01:56:41+0000
+---
+acl:
+- entity: project-owners-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: owners
+  role: OWNER
+- entity: project-editors-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: editors
+  role: OWNER
+- entity: project-viewers-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: viewers
+  role: READER
+creation_time: 2025-05-10T14:07:31+0000
+default_acl:
+- entity: project-owners-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: owners
+  role: OWNER
+- entity: project-editors-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: editors
+  role: OWNER
+- entity: project-viewers-351597940302
+  projectTeam:
+    projectNumber: '351597940302'
+    team: viewers
+  role: READER
+default_storage_class: STANDARD
+generation: 1746886049938475557
+location: ASIA
+location_type: multi-region
+metageneration: 1
+name: my-gurubucket-asia
+public_access_prevention: inherited
+rpo: DEFAULT
+soft_delete_policy:
+  effectiveTime: '2025-05-10T14:07:31.005000+00:00'
+  retentionDurationSeconds: '604800'
+storage_url: gs://my-gurubucket-asia/
+uniform_bucket_level_access: false
+update_time: 2025-05-10T14:07:31+0000"
+    },
+    {
+    "task": "Upload a file to a bucket",
+    "command": " gcloud storage cp sampletext.txt gs://my-gurubucket-asia ",
+    "terminal_output": "Copying file://sampletext.txt to gs://my-gurubucket-asia/sampletext.txt \n Completed files 1/1 | 11.0B/11.0B"
+    },
+    {
+    "task": "Download a file from a bucket",
+    "command": "gcloud storage cp gs://my-gurubucket-asia/sampletext.txt ./downloadedfile.txt",
+    "terminal_output": "Copying gs://my-bucket-asia/sampletext.txt to file://./downloadedfile.txt\nCompleted files 1/1 | 11.0B/11.0B"
+    },
+    {
+    "task": "Move a file from one bucket to another",
+    "command": "gcloud storage mv gs://my-gurubucket-asia/sampletext.txt gs://my-1gurubucket-asia/sampletext.txt",
+    "terminal_output": "Copying gs://my-gurubucket-asia/sampletext.txt to gs://my-1gurubucket-asia/sampletext.txt \nworking...Removing gs://my-gurubucket-asia/sampletext.txt...\n Completed files 2/1 | 11.0B/11.0B"
+    },
+    {
+    "task": "Delete a file from a bucket",
+    "command": "gcloud storage rm gs://my-1gurubucket-asia/sampletext.txt",
+    "terminal_output":"Removing objects:\nworking...Removing gs://my-1gurubucket-asia/sampletext.txt...\nCompleted 1/1"
+    },
+    {
+    "task": "Delete an empty bucket",
+    "command": "gcloud storage buckets delete gs://my-bucket-asia",
+    "terminal_output": 
+    },
+    {
+    "task": "Delete a non-empty bucket",
+    "command": "gcloud storage rm --recursive gs://my-bucket-asia2",
+    "terminal_output": 
+    }
+    ]
+    
+    
