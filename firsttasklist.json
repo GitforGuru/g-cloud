@@ -178,13 +178,18 @@ update_time: 2025-05-10T14:07:31+0000"
     },
     {
     "task": "Delete an empty bucket",
-    "command": "gcloud storage buckets delete gs://my-bucket-asia",
-    "terminal_output": 
+    "command": " gcloud storage buckets delete gs://my-gurubucket-asia",
+    "terminal_output": "working...Removing gs://my-gurubucket-asia/...\n Completed 1/1"
     },
     {
     "task": "Delete a non-empty bucket",
-    "command": "gcloud storage rm --recursive gs://my-bucket-asia2",
-    "terminal_output": 
+    "command": "gcloud storage rm --recursive gs://my-1gurubucket-asia",
+    "terminal_output": "Removing objects:
+working...Removing gs://my-1gurubucket-asia/sampletext.txt#1746923509091550...
+  Completed 1/1
+Removing buckets:
+working...Removing gs://my-1gurubucket-asia/...
+  Completed 1/1"
     }
     ]
     
